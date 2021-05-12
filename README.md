@@ -1,0 +1,1 @@
+# ups_redhat_training
