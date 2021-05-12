@@ -1,0 +1,307 @@
+vim /etc/systemd/logind.conf 
+exit
+ip a
+nmcli connection show
+cat /etc/rht 
+vim /etc/rht
+poweroff 
+man -k systemd
+updatedb
+man -k http
+lab help-manual start
+yum install -y mailx &>/dev/null
+mail student -s "Server mounts'
+mail student -s "Server mounts"
+mail -s "Server mounts" student
+mail
+mail -s "Server mounts" 
+mail -s "Server mounts" root
+mail
+echo rdacosta@redhat.com > my_email
+cat my_email 
+read address < my_email 
+cat $address 
+echo $address
+echo rdacosta@redhat.com >> my_email
+cat my_email 
+uniq my_email 
+vim my_email 
+uniq my_email 
+sort -u my_email 
+sort -d my_email 
+man sort
+uniq -d my_email 
+man uniq
+uniq -D my_email 
+sort my_email | uniq -D 
+man sort
+sort my_email | uniq -D 
+uniq -D
+find /etc -group wheel 
+find /etc -group root
+find /etc -group root | tee found_files
+cat found_files
+find /etc -group root | tee -a found_files
+find /
+find 
+find . -type d
+find . -type f
+find . -type l
+touch A
+find . -type f -name a
+echo $?
+find . -type f -name A
+find . -type f -iname a
+touch a
+find . -type f -iname a
+find / -inum 1
+find / -inum 1 -exec ls -li {} \;
+find / -type f -size 1M
+find / -type f -size 100M
+find / -type f -size +100M
+find / -type f -size +100M -exec ls -lh {} \; 2>/dev/null
+find /home -type d -user student
+df -ih
+lefibootmgr
+efibootmgr
+ls /boot
+ls /boot/efi/
+ls /boot/efi/EFI/
+ls /boot/efi/EFI/redhat/
+rpm -q grub2-efi
+yum search "grub*efi"
+rpm -q grub2-tools-efi
+yum search "efi"
+yum provides /boot/efi
+yum provides /boot/efi/EFI
+rpm -q shimx
+yum search shim
+rpm -q shim-x64
+yum info shim-x64
+id
+id student
+grep root /etc/sudoers
+grep ^[^#] /etc/sudoers
+yum provides /etc/sudoers
+ls -l /etc/sudoers.d/
+grep ^[^#] /etc/sudoers
+grep -i include /etc/sudoers
+rpm -q httpd
+yum install -y httpd | tail -4
+ls /etc/httpd
+ls /etc/httpd/conf
+ls /etc/httpd/conf.d
+ls /etc/exports
+ls /etc/exports.d/
+grep -i include /etc/sudoers
+grep -i port /etc/ssh/sshd_config 
+grep ^[^#] /etc/ssh/sshd_config
+wc -l /etc/ssh/sshd_config
+grep -c ^[^#] /etc/ssh/sshd_config
+grep -v '^#' /etc/ssh/sshd_config 
+grep ^[^#] /etc/ssh/sshd_config
+grep -v '#' /etc/ssh/sshd_config 
+find /etc/ -type d -iname "*.d" 2>/dev/null
+vim /etc/modprobe.conf
+useradd ricardo
+id ricardo
+usermod -g wheel ricardo 
+id ricardo
+usermod -g ricardo ricardo 
+id ricardo
+usermod -G wheel ricardo 
+id ricardo
+groupadd dbadmins
+usermod -G dbadmins ricardo 
+id ricardo
+useradd -aG wheel ricardo
+usermod -aG wheel ricardo
+id ricardo
+sudo whoami
+ip a s eth0
+nmcli con show
+nmcli con mod "Local Area Connection 1" +ipv4.addresses 10.10.10.10/24 +ipv4.dns 1.1.1.1
+ip a s eth0
+cat /etc/resolv.conf 
+nmcli con up "Local Area Connection 1" 
+ip a s eth0
+cat /etc/resolv.conf 
+nmcli con show
+nmcli con up "Wired connection 1" 
+su - ricardo
+echo redhat | passwd --stdin ricardo
+su - ricardo
+mkdir -pv /data
+ls -ld /data
+chmod 705 /data
+ls -ld /data
+chown :ricardo /data
+ls -ld /data
+useradd bobby
+echo redhat | passwd --stdin bobby
+useradd gini
+echo redhat | passwd --stdin gini
+ls -ld /data
+chmod o+w /data
+ls -ld /data
+chmod o+t /data
+ls -ld /data
+chmod g+s /data
+ls -ld /data
+chown :dbadmins /data
+chmod u+s /usr/bin/tac
+grep bobby /etc/shadow
+chage -m 2 -M 28 -W 3 -I 5 bobby
+grep bobby /etc/shadow
+chage -E 2021-12-31 bobby
+grep bobby /etc/shadow
+chage -l bobby
+chage -L bobby
+passwd -l bobby
+passwd -u bobby
+grep bobby /etc/passwd
+getent passwd bobby 
+getent shadow bobby
+umask
+umask 0077
+umask
+mkdir /common
+ls -ld /common
+umask 0000
+umask
+mkdir /foo
+ls -ld /foo
+vim /etc/bashrc 
+passwd -S bobby
+cd /lib64/security/
+ls
+less /usr/share/doc/pam/txts/README.pam_localuser 
+cd
+ip address show
+ip a s
+ip a s eth0
+ip r
+cat /etc/resolv.conf 
+systemctl status NetworkManager
+nmcli con show
+nmcli con show "Wired connection 1" 
+ls /etc/sysconfig/network-scripts/ifcfg-Wired_connection_1 
+cat /etc/sysconfig/network-scripts/ifcfg-Wired_connection_1
+nmcli connection add con-name "Local Area Connection 1" type ethernet ifname eth0
+nmcli con show
+nmcli con show --active
+nmcli con show "Local Area Connection 1" 
+nmcli con mod "Local Area Connection 1" ipv4.method manual ipv4.addresses 172.25.250.100/24 ipv4.gateway 172.25.250.254 ipv4.dns 172.25.250.254
+nmcli con show Local\ Area\ Connection\ 1 | grep ipv4
+ip a s eth0
+nmcli con up "Local Area Connection 1" 
+nmcli con show
+nmcli con show Local\ Area\ Connection\ 1 
+nmcli con show 
+nmcli con show Wired\ connection\ 1 
+nmcli con add con-name vlan100 type vlan ifname eth0
+nmcli con add con-name vlan100 type vlan dev eth0
+nmcli con add con-name vlan100 type vlan id 100 dev eth0
+nmcli con show vlan100 
+#nmcli con add con-name vlan100 type vlan id 100 dev eth0
+cat /etc/sysconfig/network-scripts/ifcfg-vlan100 
+nmcli con show vlan100
+nmcli con mod vlan100 connection.autoconnect no
+cat /etc/sysconfig/network-scripts/ifcfg-vlan100 
+nmcli con edit vlan100 
+vim /etc/sysconfig/network-scripts/ifcfg-kiran
+cp /etc/sysconfig/network-scripts/ifcfg-vlan100{,.bak}
+vim /etc/sysconfig/network-scripts/ifcfg-vlan100
+nmcli con import /etc/sysconfig/network-scripts/ifcfg-vlan100
+vim /etc/sysconfig/network-scripts/ifcfg-vlan100
+nmcli con import /etc/sysconfig/network-scripts/ifcfg-vlan100
+vim /etc/sysconfig/network-scripts/ifcfg-vlan100
+nmcli con import /etc/sysconfig/network-scripts/ifcfg-vlan100
+ethtool eth0
+xsos -ei
+nmcli device status
+nmcli device status eth0
+nmcli device status 
+nmcli con show
+nmcli con show --active
+yum install xsos
+yum provides *bin/xsos
+iptables -vnL
+ifcfg
+ip netns list
+netstat -plunt
+ss -plunt
+yum info mtr
+ip a
+ping6 fe80::5b0b:316b:561e:86ab
+ping6 fe80::5b0b:316b:561e:86ab%eth0
+less /usr/share/doc/pam/txts/README.pam_localuser 
+cat /etc/hostname
+systemctl status systemd-hostnamed
+hostnamectl 
+cat /etc/hostname
+hostnamectl set-hostname foo.example.com
+cat /etc/hostname
+hostnamectl 
+hostnamectl --help
+ip a
+ip a a 10.10.10.1/24 brd + dev eth0
+ip a
+ssh-keygen 
+ls -l .ssh
+ssh-copy-id serverb
+ssh serverb
+vim /root/.ssh/known_hosts 
+ssh serverb
+vim /root/.ssh/known_hosts 
+ssh gini@serverb
+ls /usr/lib/systemd/system
+yum provides /usr/lib/systemd/system/nftables.service
+mkdir -pv /etc/systemd/system/nftables.service.d
+cd /etc/systemd/system/nftables.service.d
+touch 00-custom.conf
+touch 01-custom.conf
+touch 99-custom.conf
+systemctl daemon-reload
+systemctl list-units
+systemctl list-units -u service
+systemctl list-units --type service
+systemctl list-units --type service --all
+systemctl list-unit-files 
+systemctl list-units --type target
+systemctl get-default
+systemctl list-dependencies multi-user.target
+systemctl list-units
+systemctl list-dependencies multi-user.target
+systemctl list-units
+systemctl status systemd-jorunald
+systemctl status systemd-journald
+ls -ld /var/log/journal
+vim /etc/systemd/journald.conf 
+systemctl restart systemd-journald
+ls -ld /var/log/journal
+journalctl --failed
+systemctl --failed
+systemctl list-units --failed
+journalctl --failed
+journalctl --help | grep -i failed
+systemctl list-units --state failed
+systemctl list-units --failed
+history
+yum install -y httpd | tail -4
+systemctl status httpd
+systemctl enable --now httpd
+systemctl status httpd
+vim /usr/lib/systemd/system/httpd.service
+mkdir -pv /etc/systemd/system/httpd.service.d
+vim /etc/systemd/system/httpd.service.d/00-custom.conf
+systemctl status httpd
+systemctl daemon-reload
+systemctl status httpd
+systemctl list-units --failed
+journalctl -f
+journalctl -f -u httpd.service
+journalctl -u httpd.service --since "2021-05-12 00:00:00" --until "2021-05-12 08:00:00"
+journalctl -u httpd.service --since "2021-05-12 00:00:00" --until "2021-05-12 09:00:00"
+history
+history -a
